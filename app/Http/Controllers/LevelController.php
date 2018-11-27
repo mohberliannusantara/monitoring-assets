@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Level;
+use App\Models\Modul;
 use Illuminate\Http\Request;
 
 class LevelController extends Controller
@@ -16,6 +17,7 @@ class LevelController extends Controller
 
   public function create()
   {
+    $data['modul'] = Modul::all();
     $data['title'] = 'Level';
     return view('level.create', $data);
   }

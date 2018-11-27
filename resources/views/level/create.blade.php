@@ -25,10 +25,22 @@
                   @endif
                 </div>
 
+                {{-- Hak Akses --}}
+                <div class="form-group">
+                    <p>Dapat Mengakses Halaman : </p>
+                    @foreach($modul as $row)
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="id_modul[]" value="{{ $row->id_modul }}" class="custom-control-input" id="{{ $row->id_modul }}">
+                            <label class="custom-control-label" for="{{ $row->id_modul }}">{{ $row->label }}</label>
+                        </div>
+                    @endforeach
+                </div>
+
                 {{-- Input Keterangan --}}
                 <div class="form-group">
                   <label for="keterangan">Keterangan</label>
-                  <input type="text" class="form-control" name="keterangan" id="keterangan" value="{{ old('keterangan') }}" required>
+                  <textarea name="keterangan" id="keterangan" rows="3" class="form-control" required>{{ old('keterangan') }}</textarea>
+                  {{-- <input type="text" class="form-control" name="keterangan" id="keterangan" value="{{ old('keterangan') }}" required> --}}
                   @if($errors->has('keterangan'))
                     <small id="helpId" class="text-danger">{{ $errors->first('keterangan') }}</small>
                   @endif

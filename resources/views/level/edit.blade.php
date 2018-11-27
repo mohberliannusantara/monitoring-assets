@@ -13,10 +13,10 @@
               <p class="card-category"> Mengubah informasi tentang level untuk admin atau pengguna</p>
             </div>
             <div class="card-body">
-              <form action="/level" method="post">
+              <form action="/level/{{ $level->id_level }}" method="post">
                 @csrf
                 @method('put')
-                
+
                 {{-- Input Nama Level --}}
                 <div class="form-group">
                   <label for="nama_level">Nama Level</label>

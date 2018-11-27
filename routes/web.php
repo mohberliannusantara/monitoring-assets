@@ -64,3 +64,11 @@ Route::post('/inventaris', 'InventarisController@store');
 Route::get('/inventaris/{id}/edit', 'InventarisController@edit');
 Route::put('/inventaris/{id}', 'InventarisController@update');
 Route::delete('/inventaris/{id}', 'InventarisController@destroy');
+
+// Route Sampah
+Route::get('/sampah', 'SampahController@index');
+Route::get('/sampah/create', 'SampahController@create');
+Route::post('/sampah', 'SampahController@store');
+Route::get('/sampah/{id}/edit', 'SampahController@edit');
+Route::put('/sampah/{id}', 'SampahController@update');
+Route::delete('/sampah/{id}', 'SampahController@destroy');

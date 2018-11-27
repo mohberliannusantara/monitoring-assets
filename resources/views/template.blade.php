@@ -54,7 +54,7 @@
           </li>
           <li class="nav-item @if ($title == 'Ruang') active @endif ">
             <a class="nav-link" href="/ruang">
-              <i class="material-icons">bubble_chart</i>
+              <i class="material-icons">bookmark</i>
               <p>Ruang</p>
             </a>
           </li>
@@ -66,7 +66,7 @@
           </li>
           <li class="nav-item @if ($title == 'Level') active @endif ">
             <a class="nav-link" href="/level">
-              <i class="material-icons">library_books</i>
+              <i class="material-icons">dns</i>
               <p>Level</p>
             </a>
           </li>
@@ -74,6 +74,12 @@
             <a class="nav-link" href="./notifications.html">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
+            </a>
+          </li>
+          <li class="nav-item @if ($title == 'Sampah') active @endif active-junk ">
+            <a class="nav-link" href="/sampah">
+              <i class="material-icons">delete</i>
+              <p>Sampah</p>
             </a>
           </li>
         </ul>
@@ -207,7 +213,7 @@
   $(document).ready(function() {
     // Javascript method's body can be found in assets/js/demos.js
     md.initDashboardPageCharts();
-    
+
   });
   </script>
 </body>

@@ -13,6 +13,27 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Route::get('inventaris', 'Api\InventarisApiController@index');
+// Route::resource('inventaris', 'Api\InventarisController');
+
+Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function() {
+    Route::resource('inventaris', 'InventarisController', [
+        'except' => ['create', 'edit']
+    ]);
+
+    Route::resource('inventaris/input', 'RegisterController', [
+        'only' => ['store', 'destroy']
+    ]);
+
+    Route::post('/user/register', [
+        'uses' => 'AuthController@store'
+    ]);
+
+    Route::post('/user/signin', [
+        'uses' => 'AuthController@signin'
+    ]);
 });

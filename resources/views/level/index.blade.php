@@ -6,22 +6,6 @@
   <div class="content">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4">
-          <div class="card card-profile">
-            <a href="level/create">
-              <div class="card-header card-header-info">
-                <h4 class="card-title">Tambah Level</h4>
-              </div>
-            </a>
-            <div class="card-body">
-              <h6 class="card-category text-gray">Tambahkan Level</h6>
-              <p class="card-description">
-                Menambahkan level kedalam daftar dengan memasukkan informasi secara detail tentang level tersebut
-              </p>
-              <a href="level/create" class="btn btn-info btn-round">Tambah</a>
-            </div>
-          </div>
-        </div>
         <div class="col-md-8">
           <div class="card">
             <div class="card-header card-header-warning">
@@ -93,6 +77,22 @@
                 {{ $links }};
               }
               @endif --}}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-profile">
+            <a href="level/create">
+              <div class="card-header card-header-info">
+                <h4 class="card-title">Tambah Level</h4>
+              </div>
+            </a>
+            <div class="card-body">
+              <h6 class="card-category text-gray">Tambahkan Level</h6>
+              <p class="card-description">
+                Menambahkan level kedalam daftar dengan memasukkan informasi secara detail tentang level tersebut
+              </p>
+              <a href="level/create" class="btn btn-info btn-round">Tambah</a>
             </div>
           </div>
         </div>

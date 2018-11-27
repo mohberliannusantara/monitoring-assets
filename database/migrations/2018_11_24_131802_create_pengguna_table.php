@@ -15,12 +15,12 @@ class CreatePenggunaTable extends Migration
     {
         Schema::create('pengguna', function (Blueprint $table) {
             $table->increments('id_pengguna');
-            $table->string('nama_pengguna');
-            $table->string('username');
+            $table->string('nama_pengguna', 100);
+            $table->string('username', 100);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('foto');
+            $table->text('foto');
             $table->integer('id_level')->unsigned();
             $table->integer('id_rayon')->unsigned();
             $table->rememberToken();

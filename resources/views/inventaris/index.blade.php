@@ -95,7 +95,7 @@
                               {{ $value->nama_inventaris }}
                             </td>
                             <td>
-                              {{ $value->jumlah | $value->satuan }}
+                              {{ $value->jumlah }} | {{ $value->satuan }}
                             </td>
                             <td>
                               {{ $value->id_ruang }}

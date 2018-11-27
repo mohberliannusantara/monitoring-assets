@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePemilikKendaraanTable extends Migration
+class CreateModulTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreatePemilikKendaraanTable extends Migration
      */
     public function up()
     {
-        Schema::create('pemilik_kendaraan', function (Blueprint $table) {
-            $table->increments('id_pemilik_kendaraan');
-            $table->string('nama_pemilik_kendaraan', 100);
-            $table->string('telepon', 15);
-            $table->text('keterangan');
+        Schema::create('modul', function (Blueprint $table) {
+            $table->increments('id_modul');
+            $table->string('nama_modul', 45);
+            $table->string('label', 45);
+            $table->string('icon', 100);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreatePemilikKendaraanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pemilik_kendaraan');
+        Schema::dropIfExists('modul');
     }
 }
