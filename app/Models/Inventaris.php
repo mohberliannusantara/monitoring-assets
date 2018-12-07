@@ -23,4 +23,14 @@ class Inventaris extends Model
     'id_jenis_inventaris',
     'id_rayon'
   ];
+
+  public function ruang()
+  {
+    return $this->belongsTo('Ruang', );
+  }
+
+  public function rayon()
+  {
+    return $this->belongsTo('App\Models\Rayon');
+  }
 }

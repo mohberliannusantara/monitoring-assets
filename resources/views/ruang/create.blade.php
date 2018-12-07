@@ -1,6 +1,6 @@
 @extends('template')
 
-@section('title', 'Level')
+@section('title', 'Ruang')
 
 @section('content')
   <div class="content">
@@ -9,31 +9,29 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-info">
-              <h4 class="card-title ">Tambah Level</h4>
-              <p class="card-category"> Tambahkan level baru untuk admin atau pengguna</p>
+              <h4 class="card-title ">Tambah Ruang</h4>
+              <p class="card-category"> Tambahkan data ruang dengan informasi yang lengkap</p>
             </div>
             <div class="card-body">
-              <form action="/level" method="post">
+              <form action="/ruang" method="post">
                 @csrf
 
-                {{-- Input Nama Level --}}
+                {{-- Input Nama Ruang --}}
                 <div class="form-group">
-                  <label for="nama_level">Nama Level</label>
-                  <input type="text" class="form-control" name="nama_level" id="nama_level" value="{{ old('nama_level') }}" required autofocus>
-                  @if($errors->has('nama_level'))
-                    <small id="helpId" class="text-danger">{{ $errors->first('nama_level') }}</small>
+                  <label for="nama_ruang">Nama Ruang</label>
+                  <input type="text" class="form-control" name="nama_ruang" id="nama_ruang" value="{{ old('nama_ruang') }}" required autofocus>
+                  @if($errors->has('nama_ruang'))
+                    <small id="helpId" class="text-danger">{{ $errors->first('nama_ruang') }}</small>
                   @endif
                 </div>
 
-                {{-- Hak Akses --}}
+                {{-- Input Nama Ruang --}}
                 <div class="form-group">
-                  <label for="modul">Dapat Mengakses Halaman : </label>
-                  @foreach($modul as $row)
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="id_modul[]" value="{{ $row->id_modul }}" class="custom-control-input" id="{{ $row->id_modul }}">
-                      <label class="custom-control-label" for="{{ $row->id_modul }}">{{ $row->label }}</label>
-                    </div>
-                  @endforeach
+                  <label for="id_rayon">Nama Ruang</label>
+                  <input type="text" class="form-control" name="id_rayon" id="id_rayon" value="{{ old('id_rayon') }}" required autofocus>
+                  @if($errors->has('id_rayon'))
+                    <small id="helpId" class="text-danger">{{ $errors->first('id_rayon') }}</small>
+                  @endif
                 </div>
 
                 {{-- Input Keterangan --}}

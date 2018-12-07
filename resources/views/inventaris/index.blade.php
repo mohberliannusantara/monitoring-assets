@@ -76,10 +76,10 @@
                           Jumlah
                         </th>
                         <th>
-                          Ruang
+                          Satuan
                         </th>
                         <th>
-                          Keterangan
+                          Ruang
                         </th>
                         <th>
                           Aksi
@@ -95,13 +95,13 @@
                               {{ $value->nama_inventaris }}
                             </td>
                             <td>
-                              {{ $value->jumlah }} | {{ $value->satuan }}
+                              {{ $value->jumlah }}
                             </td>
                             <td>
-                              {{ $value->id_ruang }}
+                              {{ $value->satuan }}
                             </td>
                             <td>
-                              {{ $value->keterangan }}
+                              {{ $value->ruang->nama_ruang }}
                             </td>
                             <td>
                               <div class="row">

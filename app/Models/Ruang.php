@@ -9,4 +9,9 @@ class Ruang extends Model
   protected $table = "ruang";
   protected $primaryKey = "id_ruang";
   protected $fillable = ['nama_ruang', 'keterangan', 'id_rayon'];
+
+  public function inventaris()
+  {
+    return $this->hasMany('Inventaris', 'id_ruang');
+  }
 }

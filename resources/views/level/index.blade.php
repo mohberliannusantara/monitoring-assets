@@ -47,21 +47,18 @@
                               {{ $value->keterangan }}
                             </td>
                             <td>
-                              <div class="row">
-                                <a href="#" onclick="openModal({{ $value->id_level }})" rel="tooltip" title="Lihat" class="btn btn-sm btn-success">
-                                  <i class="material-icons">zoom_out_map</i>
-                                </a>
+                              {{-- <div class="row"> --}}
+                              @csrf
                                 <a href="level/{{ $value->id_level }}/edit" rel="tooltip" title="Ubah" class="btn btn-sm btn-warning">
                                   <i class="material-icons">edit</i>
                                 </a>
-                                <form action="/level/{{ $value->id_level }}" method="post">
-                                    @csrf
+                                {{-- <form action="/level/{{ $value->id_level }}" method="post">
                                     @method('delete')
                                     <button type="submit" class="btn btn-sm btn-danger"><i class="material-icons">close</i></button>
-                                </form>
-                              </div>
-                              {{-- <a href="#" id="deleteModal" onclick="deleteModal({{ $value->id_level }})" data-id="{{ $value->id_level }}" data-toggle="modal" data-target="#confirmModal" rel="tooltip" title="Hapus" class="btn btn-sm btn-danger">
-                                <i class="material-icons">close</i></a> --}}
+                                </form> --}}
+                                <a href="#" id="deleteData" onclick="deleteData({{ $value->id_level }})" data-id="{{ $value->id_level }}" data-toggle="modal" data-target="#confirmModal" rel="tooltip" title="Hapus" class="btn btn-sm btn-danger">
+                                <i class="material-icons">close</i></a>
+                              {{-- </div> --}}
                             </td>
                           </tr>
                         @endforeach
@@ -100,7 +97,7 @@
     </div>
   </div>
 
-  {{-- <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -112,7 +109,7 @@
         <div class="modal-body">
           <div class="form-group">
             <input type="hidden" id="id_level" value="">
-            <p>Apakah Anda yakin untuk menghapus level?</p>
+            <p>Apakah Anda yakin untuk menghapus level ?</p>
           </div>
         </div>
         <div class="modal-footer">
@@ -121,7 +118,7 @@
         </div>
       </div>
     </div>
-  </div> --}}
+  </div>
 
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -142,7 +139,7 @@
     </div>
   </div>
 
-  {{-- <script type="text/javascript">
+  <script type="text/javascript">
   function openModal(id) {
     $.ajax({
       url:"level/get/"+id,
@@ -154,7 +151,7 @@
     });
   }
 
-  function deleteModal(id) {
+  function deleteData(id) {
     $('#id_level').val(id);
   }
 
@@ -168,6 +165,6 @@
       location.reload();
     });
   }
-  </script> --}}
+  </script>
 
 @endsection

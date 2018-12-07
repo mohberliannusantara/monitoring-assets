@@ -23,9 +23,15 @@ class RuangController extends Controller
   public function store(Request $request)
   {
     $this->validate($request, [
-      'nama_ruang' => 'required|string|min:4',
-      'keterangan' => 'required|string|min:10'
+      'nama_ruang' => 'required|string',
+      'keterangan' => 'required|string'
     ]);
+
+    $data = new Ruang;
+    $data->nama_ruang = $request->nama_ruang;
+    $data->id_rayon =$request->id_rayon;
+    $data->keterangan = $request->keterangan;
+    $data->save();
 
     Ruang::create($request->all());
     return redirect('/ruang');

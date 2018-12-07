@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Level;
 use App\Models\Modul;
+use App\Models\Akses;
 use Illuminate\Http\Request;
 
 class LevelController extends Controller
@@ -25,11 +26,17 @@ class LevelController extends Controller
   public function store(Request $request)
   {
     $this->validate($request, [
-      'nama_level' => 'required|string|min:4',
-      'keterangan' => 'required|string|min:10'
+      'nama_level' => 'required|string'
     ]);
 
-    Level::create($request->all());
+    $level = Level::create($request->all());
+
+    foreach ($request->id_modul as $row) {
+        Akses::create([
+            'id_level' => $level->id_level,
+            'id_modul' => $row
+        ]);
+    }
     return redirect('/level');
   }
 
@@ -40,8 +47,15 @@ class LevelController extends Controller
 
   public function edit($id)
   {
-    $data['level'] = Level::find($id);
     $data['title'] = 'Level';
+
+    $data['level'] = Level::find($id);
+    $data['modul'] = Modul::all();
+    
+    $data['level_akses'] = array_map(function ($item) {
+      return $item['id_modul'];
+    }, $data['level']->akses->toArray());
+
     return view('level.edit', $data);
   }
 

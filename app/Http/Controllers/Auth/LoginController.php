@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
+// class needed for login and logout logic
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+// Use Auth
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,15 +30,26 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/beranda';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except('logout');
+    // }
+    
+    // Custom guard for seller
+    protected function guard()
     {
-        $this->middleware('guest')->except('logout');
+      return Auth::guard('admin');
+    }
+
+    public function showLoginForm()
+    {
+      return view('authentifikasi.index');
     }
 }

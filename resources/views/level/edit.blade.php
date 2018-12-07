@@ -26,6 +26,16 @@
                   @endif
                 </div>
 
+                <div class="form-group">
+                    <p>Dapat Mengakses Halaman : </p>
+                    @foreach($modul as $row)
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="id_modul[]" value="{{ $row->id_modul }}" class="custom-control-input" id="{{ $row->id_modul }}" {{ in_array($row->id_modul, $level_akses) ? 'checked' : '' }}>
+                            <label class="custom-control-label" for="{{ $row->id_modul }}">{{ $row->label }}</label>
+                        </div>
+                    @endforeach
+                </div>
+
                 {{-- Input Keterangan --}}
                 <div class="form-group">
                   <label for="keterangan">Keterangan</label>

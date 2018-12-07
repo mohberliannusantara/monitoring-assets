@@ -53,9 +53,10 @@
           {{-- <img src="/img/favicon.png" style="height:100px; weight:100%" alt=""> --}}
 					<h3 class="description">Memantau aset perusahaan dengan lebih mudah</h3>
 					<div class="btn-group">
-						<button class="btn btn-warning btn-lg" type="button" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModal">
+						<a href="/authentifikasi" class="btn btn-warning btn-lg">Kelola Inventaris</a>
+						{{-- <button class="btn btn-warning btn-lg" type="button" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModal">
 							Kelola Inventaris
-						</button>
+						</button> --}}
 					</div>
 				</div>
 			</div>

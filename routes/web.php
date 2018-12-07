@@ -15,7 +15,26 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// logged in users / admin cannot access or send request these pages
+Route::group(['middleware' => 'admin'], function ()
+{
+  Route::get('login', 'Auth\LoginController@showLoginForm');
+  Route::post('login', 'Auth\LoginController@login');
+});
+
+// only logged in sellers can access or send request to these pages
+Route::group(['middleware' => 'seller_auth'], function ()
+{
+  Route::post('logout', 'Auth\LoginController@logout');
+  Route::get('/seller_home', function () {
+    return view('seller.home');
+  });
+});
+
 Route::get('/beranda', 'BerandaController@index');
+
+// Route::get('/authentifikasi', 'AuthentifikasiController@index');
 
 // Route Level
 Route::get('/level', 'LevelController@index');
@@ -72,3 +91,7 @@ Route::post('/sampah', 'SampahController@store');
 Route::get('/sampah/{id}/edit', 'SampahController@edit');
 Route::put('/sampah/{id}', 'SampahController@update');
 Route::delete('/sampah/{id}', 'SampahController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

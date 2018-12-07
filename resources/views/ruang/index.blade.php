@@ -44,16 +44,7 @@
                           Nama Ruang
                         </th>
                         <th>
-                          Plat
-                        </th>
-                        <th>
-                          Jenis
-                        </th>
-                        <th>
-                          Pengguna
-                        </th>
-                        <th>
-                          Rayon
+                          Keterangan
                         </th>
                         <th>
                           Aksi
@@ -69,16 +60,7 @@
                               {{ $value->nama_ruang }}
                             </td>
                             <td>
-                              {{ $value->nomor_polisi }}
-                            </td>
-                            <td>
-                              {{ $value->id_jenis_ruang }}
-                            </td>
-                            <td>
-                              {{ $value->pengguna }}
-                            </td>
-                            <td>
-                              {{ $value->id_rayon }}
+                              {{ $value->keterangan }}
                             </td>
                             <td>
                               <div class="row">
