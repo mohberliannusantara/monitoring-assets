@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Flat Login Form</title>
+  <title>Login Form</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
@@ -18,23 +18,40 @@
   </div>
   <div class="form">
     <div class="thumbnail"><img src="img/favicon.png"/></div>
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
+
+    <form class="login-form" role="form" method="POST" action="{{ url('/login') }}">
+      {{ csrf_field() }}
+
+      <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+        <div class="col-md-6">
+          <input id="username" type="username" placeholder="username" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
+          @if ($errors->has('username'))
+            <span class="help-block">
+              <strong>{{ $errors->first('username') }}</strong>
+            </span>
+          @endif
+        </div>
+      </div>
+
+      <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+        <div class="col-md-6">
+          <input id="password" type="password" placeholder="password" class="form-control" name="password" required>
+          @if ($errors->has('password'))
+            <span class="help-block">
+              <strong>{{ $errors->first('password') }}</strong>
+            </span>
+          @endif
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">
+          Login
+        </button>
+      </div>
       <p class="message">Not registered? <a href="#">Create an account</a></p>
     </form>
   </div>
-  <video id="video" autoplay="autoplay" loop="loop" poster="polina.jpg">
-    <source src="http://andytran.me/A%20peaceful%20nature%20timelapse%20video.mp4" type="video/mp4"/>
-  </video>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script  src="js/index.js"></script>
 </body>

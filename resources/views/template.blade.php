@@ -23,7 +23,7 @@
     <div class="sidebar" data-color="orange" data-background-color="white" data-image="/img/sidebar-1.jpg">
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+          {{ Auth::guard('pengguna')->user()->id_rayon }}
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -110,7 +110,7 @@
             </form>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#pablo">
+                <a class="nav-link" href="/beranda">
                   <i class="material-icons">dashboard</i>
                   <p class="d-lg-none d-md-block">
                     Stats
@@ -140,10 +140,23 @@
                     Account
                   </p>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Lihat Profil</a>
-                  <a class="dropdown-item" href="#">Keluar</a>
-                </div>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" role="menu">
+                  <li>
+                    <a class="dropdown-item" href="/pengguna">Lihat Profil</a>
+                  </li>
+                  <li>
+                    {{-- <a class="dropdown-item" href="{{ url('/logout') }}">Keluar</a> --}}
+                    <a href="{{ url('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    Logout
+                  </a>
+
+                  <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                  </form>
+                </li>
+              </ul>
               </li>
             </ul>
           </div>
@@ -161,7 +174,7 @@
           <nav class="float-left">
             <ul>
               <li>
-                <a href="https://www.creative-tim.com">
+                <a href="">
                   Creative Tim
                 </a>
               </li>

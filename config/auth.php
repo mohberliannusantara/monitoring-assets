@@ -45,6 +45,12 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        // our new custom driver
+        'pengguna' => [
+          'driver' => 'session',
+          'provider' => 'pengguna'
+        ]
     ],
 
     /*
@@ -69,6 +75,12 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+        // Pengguna user provider
+        'pengguna' => [
+          'driver' => 'eloquent',
+          'model' => App\Models\Pengguna::class
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

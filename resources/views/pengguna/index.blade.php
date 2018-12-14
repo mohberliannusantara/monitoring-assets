@@ -48,7 +48,7 @@
                           {{ $value->pengguna }}
                         </td>
                         <td>
-                          <div class="row">
+                          {{-- <div class="row"> --}}
                             <a href="#" onclick="openModal({{ $value->id_pengguna }})" rel="tooltip" title="Lihat" class="btn btn-sm btn-success">
                               <i class="material-icons">zoom_out_map</i>
                             </a>
@@ -60,7 +60,7 @@
                               @method('delete')
                               <button type="submit" class="btn btn-sm btn-danger"><i class="material-icons">close</i></button>
                             </form>
-                          </div>
+                          {{-- </div> --}}
                           {{-- <a href="#" id="deleteModal" onclick="deleteModal({{ $value->id_pengguna }})" data-id="{{ $value->id_pengguna }}" data-toggle="modal" data-target="#confirmModal" rel="tooltip" title="Hapus" class="btn btn-sm btn-danger">
                           <i class="material-icons">close</i></a> --}}
                         </td>

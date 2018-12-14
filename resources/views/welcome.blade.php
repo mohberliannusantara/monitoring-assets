@@ -24,14 +24,8 @@
 		<div class="container-fluid">
 			<div class="navbar-wrapper">
 				<a class="navbar-brand" href="#Inventaris">Inventaris Dashboard</a>
-        {{-- <img src="/img/favicon.png" style="height:60px; weight:100%" alt=""> --}}
+				{{-- <img src="/img/favicon.png" style="height:60px; weight:100%" alt=""> --}}
 			</div>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="navbar-toggler-icon icon-bar"></span>
-				<span class="navbar-toggler-icon icon-bar"></span>
-				<span class="navbar-toggler-icon icon-bar"></span>
-			</button>
 			<div class="collapse navbar-collapse justify-content-end">
 				<ul class="navbar-nav">
 					<li class="nav-item">
@@ -49,44 +43,14 @@
 		<div class="content-center">
 			<div class="col-md-8 ml-auto mr-auto">
 				<div class="brand">
-					<h1 class="title">Monitoring Assets</h1>
-          {{-- <img src="/img/favicon.png" style="height:100px; weight:100%" alt=""> --}}
+					{{-- <h1 class="title">Monitoring Assets</h1> --}}
+					<h1 class="title">PT. PLN (Persero)</h1>
+					{{-- <img src="/img/favicon.png" style="height:100px; weight:100%" alt=""> --}}
 					<h3 class="description">Memantau aset perusahaan dengan lebih mudah</h3>
 					<div class="btn-group">
-						<a href="/authentifikasi" class="btn btn-warning btn-lg">Kelola Inventaris</a>
-						{{-- <button class="btn btn-warning btn-lg" type="button" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModal">
-							Kelola Inventaris
-						</button> --}}
+						<a href="/login" class="btn btn-warning btn-lg">Kelola Inventaris</a>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h3 class="modal-title" id="exampleModalLabel">Masuk</h3>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="" class="label">Username</label>
-						<input type="text" name="username" class="form-control" id="recipient-name">
-					</div>
-					<div class="form-group">
-						<label for="" class="label">Password</label>
-						<input type="password" name="password" class="form-control" id="recipient-name">
-					</div>
-				</div>
-				<div class="modal-footer">
-					<!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-					<button type="submit" class="btn btn-warning">Masuk</button>
-				</div>
-
 			</div>
 		</div>
 	</div>
@@ -111,31 +75,10 @@
 			</div>
 		</div>
 	</footer>
-	<script type="text/javascript">
-		function openModal(id) {
-			$.ajax({
-				url:""+id,
-				method: 'post',
-				data:null
-			}).done(function(data) {
-				$('#modal-content').html(data);
-				$('#exampleModalCenter').modal('show');
-			});
-		}
-	</script>
-	<!--   Core JS Files   -->
-	<script src="/js/core/jquery.min.js" type="text/javascript"></script>
-	<script src="/js/core/popper.min.js" type="text/javascript"></script>
-	<script src="/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-	<script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-	<!--  Google Maps Plugin    -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-	<!-- Chartist JS -->
-	<script src="/js/plugins/chartist.min.js"></script>
+
 	<!--  Notifications Plugin    -->
 	<script src="/js/plugins/bootstrap-notify.js"></script>
-	<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-	<script src="/js/material-dashboard.min.js?v=2.1.0" type="text/javascript"></script>
+
 	<!-- Material Dashboard DEMO methods, don't include it in your project! -->
 	<script src="/demo/demo.js"></script>
 </body>
